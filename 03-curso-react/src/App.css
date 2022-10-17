@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica';
+}
+body{
+    background-color: #21232A;
+    color: white;
+    padding: 70px;
+    font-size: 1.3rem;
+}
+button{
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: white;
+    border-radius: 3px;
+}
