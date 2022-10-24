@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function AddCategory( { onNewCategory } ) {
+export function AddCategory( { onNewCategory } ) {
 
     const [inputValue, setInputValue] = useState('One Punch');
 
