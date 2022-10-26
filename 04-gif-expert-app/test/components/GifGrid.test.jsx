@@ -42,6 +42,6 @@ describe('Pruebas en <GifGrid />', () => {
         });
         
         render(<GifGrid category={category} />);
-        expect(screen.getAllByRole('img').elngth).toBe(2);
+        expect(screen.getAllByRole('img').length).toBe(2);
      });
 });
