@@ -9,6 +9,12 @@ export function useFetch ( url ){
     });
 
     const getQuotes = async () => {
+
+        setState({
+            ...state,
+            isLoading: true
+        });
+
         const resp = await fetch(url);
         const data = await resp.json();
         
@@ -23,8 +29,12 @@ export function useFetch ( url ){
 
         getQuotes();
       
-    }, [url])
+    }, [url]);
     
 
-    return;
+    return {
+        data: state.data,
+        isLoading: state.isLoading,
+        hasError: state.hasError
+    };
 }
