@@ -10,8 +10,6 @@ describe('Pruebas en useForm', () => {
 
     test('Debe de regresar la información el objeto por defecto', () => { 
         const { result } = renderHook( () => useForm( initialForm ) );
-
-        console.log(result.current);
         
         expect( result.current ).toEqual( 
             {
@@ -35,6 +33,18 @@ describe('Pruebas en useForm', () => {
         expect( result.current.name ).toBe( 'Fernando' );
         expect( result.current.name ).toBe( 'Fernando' );
         
+      });
+
+      test('debe de realizar el reset del formulario', () => {
+        const { result } = renderHook( () => useForm( initialForm ) );
+        const { onResetForm, onInputChange } = result.current; 
+        act(() => {
+            onInputChange( { target: { name: 'name', value: 'Fernando' } } );
+            onResetForm();
+        });
+
+        expect( result.current.formState ).toEqual( initialForm );
+
       });
 
 });
